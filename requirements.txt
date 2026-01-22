@@ -1,0 +1,11 @@
+streamlit
+transformers
+torch
+python-docx
+PyPDF2
+firebase-admin
+beautifulsoup4
+requests
+google-auth
+google-auth-oauthlib
+google-auth-httplib2

@@ -1,0 +1,20 @@
+# Ignore Virtual Environment
+.venv/
+venv/
+env/
+
+# Ignore Python Cache
+__pycache__/
+*.py[cod]
+
+# --- SECURITY: IGNORE SECRETS ---
+# Ignore Streamlit Secrets (Google Keys)
+.streamlit/secrets.toml
+
+# Ignore Firebase Keys
+Assets/Assert.json
+Assets/firebase.json
+
+# Ignore generic secrets
+*.pem
+*.key

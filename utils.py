@@ -14,8 +14,14 @@ import os
 # We initialize this FIRST so 'db' is available for other functions
 def initialize_firebase():
     if not firebase_admin._apps:
-        # Make sure 'Assets/Assert.json' exists in your folder!
-        cred = credentials.Certificate("Assets/Assert.json") 
+        # Check if we are on the Cloud (Secrets exist)
+        if "firebase" in st.secrets:
+            # Create credential from the Secret Dictionary
+            cred = credentials.Certificate(dict(st.secrets["firebase"]))
+        else:
+            # Fallback to local file (for your laptop)
+            cred = credentials.Certificate("Assets/Assert.json") 
+            
         firebase_admin.initialize_app(cred)
     return firestore.client()
 
